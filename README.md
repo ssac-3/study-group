@@ -1,1 +1,1 @@
-"# study-group" 
+#SSAC 스터디그룹
