@@ -19,4 +19,23 @@ function calculate(numArr,targetNum){
     }
 }
 
-console.log(calculate(nums ,target));
+
+function twoSum(arr,tg){
+    hash_table={};
+
+    for(let i = 0 ; i < arr.length ; i++){
+        value = tg-arr[i];
+
+        if ( Object.keys(hash_table).includes(""+value) && hash_table[value] !== i){
+            
+            return [i,hash_table[value]].sort();
+        }
+        
+        hash_table[arr[i]]=i;
+        console.log(hash_table);
+    }
+    return [-1,-1]
+}
+
+console.log(twoSum(nums,target));
+// console.log(calculate(nums ,target));
