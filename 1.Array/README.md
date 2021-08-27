@@ -151,13 +151,64 @@ console.log(findSumOfTwo([2, 7, 10, 19], 17)); // [1,2]
 
 ## 4. 정렬된 배열에서 중복 제거<a id="4"></a>
 
+```
+let a = [0, 0, 0, 1, 2, 2, 2, 3];
+function deduplication(arr) {
+  if (arr.length === 0) {
+    return 0;
+  }
+  let cnt = 1;
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] !== arr[i + 1]) cnt += 1;
+  }
+  return cnt;
+}
+console.log(deduplication(a));
+
+// a = new Set(a);
+// a = [...a];
+
+```
+
 ---
 
 ## 5. 배열에서 삽입 위치 찾기<a id="5"></a>
 
+```
+'use strict';
+
+const js_list = [1, 2, 5, 6, 7];
+const target = 4;
+if (js_list.includes(target)) {
+  console.log(js_list.indexOf(target));
+} else {
+  const len = js_list.length;
+  for (let i = 0; i < len; i += 1) {
+    if (js_list[i] > target) {
+      //i번쨰 인덱스에 target 값 삽입
+      // js_list.splice(i, 0, target);
+      console.log(i);
+      break;
+    }
+  }
+}
+
+```
+
 ---
 
 ## 6. 정렬된 배열의 병합1<a id="6"></a>
+
+```
+'use strict';
+
+const a = [1, 4, 5];
+const b = [2, 3, 7];
+
+const c = [...a, ...b].sort();
+console.log(c);
+
+```
 
 ---
 
