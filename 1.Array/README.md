@@ -34,11 +34,21 @@
 ---
 
 ## 1. 배열의 이해<a id="1"></a>
+**배열(Array)** : `연속적인 메모리 공간에 저장된 아이템의 집합을 표현하는 자료구조`
 
 ---
 
 ## 2. 파이썬에서 배열 사용법<a id="2"></a>
-
+- 추가 관련 method
+  - append() : 끝에 요소 추가, iterable 자료형도 하나의 요소로 저장 ```list.append(element)``` 
+  - extend() : iterable 자료형의 각각 요소를 배열 끝에 저장 ```list1.extend(list2) ```
+  - insert() : 지정 위치에 요소 추가, iterable 자료형도 하나의 요소로 저장 ```list.insert(location, element)```
+ 
+- 삭제 관련 method
+  - remove() : 지정 위치 값과 같은 값을 검색 후 처음 값 삭제
+  - clear() : 모든 요소 삭제  
+  - del : 위치 또는 범위를 지정 삭제
+  - pop() : 지정 위치 값을 삭제하고 그 값을 return
 ---
 
 ## 3. 두 수의 합 찾기<a id="3"></a>
