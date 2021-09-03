@@ -20,13 +20,14 @@ function calculate(numArr,targetNum){
 }
 
 
-function twoSum(arr,tg){
+function twoSum(arr,tg){ // hash table 생성
     hash_table={};
 
     for(let i = 0 ; i < arr.length ; i++){
         value = tg-arr[i];
 
-        if ( Object.keys(hash_table).includes(""+value) && hash_table[value] !== i){
+        //테이블이 계산된 키 값을 가지고 있고, 그게 지금이 아니면 반환
+        if ( Object.keys(hash_table).includes(""+value) && hash_table[value] !== i){ 
             
             return [i,hash_table[value]].sort();
         }

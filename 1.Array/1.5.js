@@ -5,28 +5,32 @@
 출력값: 2
 */
 
-const nums=[1,4,5,6]
-const target=3
+const NUMS=[1,2,3,4,5]
+const TARGET=3;
 
-const result = (n,t)=>{
-    
-    let top = n.length-1;
+const result = (numArr,targetNum)=>{
+    const idx = numArr.indexOf(targetNum);
     let bottom = 0;
+    let top = numArr.length-1
+    let middle = Math.floor(top/2);
 
-    while(bottom <= top){
+    if(idx !== -1) return idx;    
+    
+    while(top !== middle){
 
-        let middle = Math.floor((top+bottom)/2);
-        console.log("----",middle);
-        if (t === n[middle]){
-            return middle;
-        }else if(t > n[middle]){
-            bottom = middle + 1
-        }else{
-            top = middle - 1;
-        }
+        if (top === middle || bottom === middle) return middle+1;
+            
+        else if(targetNum > numArr[middle]) bottom = middle;
+            
+        else if(targetNum < numArr[middle]) top = middle;
+            
+        middle = Math.floor((top+bottom)/2);
+
     }
-    return bottom
+
+    return middle+1;
+
 }
 
-console.log(result(nums,target));
+console.log(result(NUMS,TARGET));
 
