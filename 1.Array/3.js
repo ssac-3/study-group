@@ -14,6 +14,7 @@
 //     }
 //   }
 // }
+
 const findSumOfTwoWithHashTable = function (nums, target) {
   const ANSWER = [];
   const NUM_LEN = nums.length;
