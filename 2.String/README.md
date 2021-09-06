@@ -29,6 +29,45 @@
 
 ## 3. 회문(Palindrome) 확인<a id="3"></a>
 
+### Tip. 문자열 합치기
+- **+** 연산자
+  - 가장 성능이 우수함
+  ```js
+  let str = 'Hello';
+  str += ' ';
+  str += 'world';
+
+  console.log(str); // Hello world
+  ```
+
+<br>
+
+- concat 함수
+  - 파라미터로 문자열 이외의 다른 값도 넣을 수 있음
+  - 배열이 arg로 들어가면 배열의 concat으로 인식
+  ```js
+  const result = 'Hello'.concat(' ', 'world', '!');
+
+  document.write(result); // Hello world!
+  ```
+
+<br>
+
+- join 함수
+  - 문자열을 이어 붙일 때 separator(구분자)를 지정
+  ```js
+  const str1 = ['Hello', 'world'].join();
+  const str2 = ['Hello', 'world'].join('♥');
+
+  document.write(str1);
+  document.write('<br>');
+  document.write(str2);
+  // Hello,world
+  // Hello♥world
+  ```
+  
+  <br>
+  
 ---
 
 ## 4. 그룹 애너그램<a id="4"></a>
