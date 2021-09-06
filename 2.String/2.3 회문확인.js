@@ -20,7 +20,7 @@ const solution = function(input) {
     
     //정제된 문자 reverse 
     let filteredStringReverse = ""
-    for (let i = filteredString.length-1; i>=0; i--) {filteredStringReverse += filteredString.charAt(i);}
+    for (let i = filteredString.length-1; i>=0; i--) {filteredStringReverse += filteredString.charAt(i)};
     console.log("뒤집은 문자 : ", filteredStringReverse)
 
     // 회문인지 확인하여 반환
