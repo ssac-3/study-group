@@ -18,31 +18,59 @@ const term = readline.createInterface({
 });
 
 const result = (row)=>{
-    const arr=[[1],[1,1]];
+    const arr = [];
 
-    console.log("input row");
+    // const arr=[[1],[1,1]];
+    
+    // console.log("input row");
 
     term.on('line',line =>{
 
-        if(line>=3){
 
-            for(let i = 0 ; i < line ; i++){
-                let newArr = [];
-                for(let j = 0 ; j < line ; j++){
 
-                    if(arr[i-1][j-1] && arr[i-1][j]){
-                        newArr.push(arr[i-1][j-1]+arr[i-1][j]);
-                        arr.push(newArr);
-                    }
-                }
 
-            }
-        }else{
-            if(line == 1){
-                arr.pop();
-            }
+        for(let i = 0 ; i < line ; i++){
+           
+            const newArr = Array(line).map((num,idx)=>{
+                
+                if(arr[i-1]){
+
+                    if(arr[i-1][idx-1] && arr[i-1][idx])
+                        return arr[i-1][idx-1] + arr[i-1][idx];
+                    else
+                        return 1;
+                    
+                }else
+                    return 1;
+                
+            });
+
+            arr.push(newArr);
+
         }
+
+
+        // if(line>=3){
+
+        //     for(let i = 0 ; i < line ; i++){
+        //         let newArr = [];
+
+        //         for(let j = 0 ; j < line ; j++){
+        //             if(arr[i-1][j-1] && arr[i-1][j]){
+        //                 newArr.push(arr[i-1][j-1]+arr[i-1][j]);
+        //                 arr.push(newArr);
+        //             }
+        //         }
+
+        //     }
+        // }else{
+        //     if(line == 1){
+        //         arr.pop();
+        //     }
+        // }
         console.log(arr);
+        term.close();
+
     });
 
 }

@@ -5,10 +5,11 @@
 출력값: 2
 */
 
-const NUMS=[1,2,3,4,5]
-const TARGET=3;
+const NUMS=[1,3,5,7,9]
+const TARGET=6;
 
 const result = (numArr,targetNum)=>{
+
     const idx = numArr.indexOf(targetNum);
     let bottom = 0;
     let top = numArr.length-1
@@ -17,14 +18,20 @@ const result = (numArr,targetNum)=>{
     if(idx !== -1) return idx;    
     
     while(top !== middle){
-
+        
         if (top === middle || bottom === middle) return middle+1;
             
-        else if(targetNum > numArr[middle]) bottom = middle;
+        else if(targetNum > numArr[middle]) {
+            console.log(`타겟이 클때 top: ${top} middle: ${middle} bottom : ${bottom}`);
+            bottom = middle
+        }
             
-        else if(targetNum < numArr[middle]) top = middle;
+        else if(targetNum < numArr[middle]){ 
+            console.log(`타겟이 작을때 top: ${top} middle: ${middle} bottom : ${bottom}`)
+            top = middle
+        };
             
-        middle = Math.floor((top+bottom)/2);
+        middle = Math.floor((top+bottom)/2); 
 
     }
 

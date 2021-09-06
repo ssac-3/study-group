@@ -17,12 +17,16 @@ const result = (arr1,arr2)=>{
         for(let j = 0 ; j < arr2.length ; j++){
 
             if(arr2[j] < arr1[i]){
-                temp = arr1[i];
-                arr1[i] = arr2[j];
-                arr2[j] = temp;
+                
+                [arr1[i],arr2[j]] = [arr2[j], arr1[i]];
+                // temp = arr1[i];
+                // arr1[i] = arr2[j];
+                // arr2[j] = temp;
             }
         }
     }
 
     console.log(`${arr1}  ${arr2.sort()}`);
 }
+
+result(nums1, nums2);

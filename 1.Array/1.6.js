@@ -9,7 +9,6 @@ const nums2 = [2,3,7,9,10,28];
 
 const result = (arr1, arr2)=>{
 
-
     for(let i = 0 ; i < arr1.length; i++ ){
 
         for(let j = 0 ; j < arr2.length; j++){
