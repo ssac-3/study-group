@@ -2,7 +2,6 @@
 
 ## 목차
 
-
 [1. 문자열의 이해](#1)
 
 [2. 파이썬에서 문자열 사용법](#2)
@@ -12,7 +11,6 @@
 [4. 그룹 애너그램](#4)
 
 [5. IPv4 / IPv6 검증 시스템](#5)
-
 
 ---
 
@@ -26,6 +24,36 @@
 
 ## 3. 회문(Palindrome) 확인<a id="3"></a>
 
+```
+'use strict';
+
+let str = 'Azcbbc, c, bb, cza';
+
+const checkPalindrome = function (str) {
+  str = str.toLowerCase();
+  const arr = [];
+
+  for (let s of str) {
+    const regExp = /[a-z]/g;
+    if (regExp.test(s)) {
+      if (arr[arr.length - 1] !== s) {
+        arr.push(s);
+      } else {
+        arr.pop();
+      }
+    }
+  }
+
+  if (arr.length) {
+    return false;
+  } else {
+    return true;
+  }
+};
+
+console.log(checkPalindrome(str));
+```
+
 ---
 
 ## 4. 그룹 애너그램<a id="4"></a>
@@ -33,4 +61,3 @@
 ---
 
 ## 5. IPv4 / IPv6 검증 시스템<a id="5"></a>
-
