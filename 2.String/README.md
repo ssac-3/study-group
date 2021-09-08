@@ -81,6 +81,8 @@
 - ex) str = ['eat', 'repaid', 'paired', 'tea', 'bat']
   - result = [['eat', 'tea'], ['repaid', 'paired'], ['bat']]
 
+<br>
+
 ### Tip. 배열 중복 제거
 - Set 객체
 ```js
