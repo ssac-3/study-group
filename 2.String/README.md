@@ -76,9 +76,48 @@
 ---
 
 ## 4. 그룹 애너그램<a id="4"></a>
+### **[문제]**
 - 주어지는 문자열 리스트를 검사해 서로 같은 애너그램을 가지는 문자열을 그룹으로 묶기
 - ex) str = ['eat', 'repaid', 'paired', 'tea', 'bat']
   - result = [['eat', 'tea'], ['repaid', 'paired'], ['bat']]
+
+### Tip. 배열 중복 제거
+- Set 객체
+```js
+const arr = [1, 2, 3, 3, 2];
+const set = new Set(arr);
+const uniqueArr = [...set];
+
+document.writeln(Array.isArray(uniqueArr));  // true
+document.writeln(uniqueArr);  // 1,2,3
+```
+
+- indexOf(), filter()
+  - indexOf : 배열에서 특정값이 처음으로 나타나는 index를 리턴
+  - filter : 특정 조건에 부합하는 배열의 모든 값을 배열 형태로 리턴
+```js
+const uniqueArr = arr.filter((element, index) => {
+    return arr.indexOf(element) === index;
+});
+
+document.writeln(Array.isArray(uniqueArr));
+document.writeln(uniqueArr);
+```
+
+- forEach(), includes()
+  - forEach : 배열을 순회하면서, 배열의 원소들로 주어진 callback함수를 실행
+  - includes : 배열에 특정 값이 포함되는지 여부를 검사
+
+```js
+arr.forEach((element) => {
+    if (!uniqueArr.includes(element)) {
+        uniqueArr.push(element);
+    }
+});
+
+document.writeln(Array.isArray(uniqueArr));
+document.writeln(uniqueArr);
+```
 ---
 
 ## 5. IPv4 / IPv6 검증 시스템<a id="5"></a>
