@@ -48,11 +48,7 @@ const findKeysWithSameValue = function(inputToDictionary, valuesFromDictionaryTo
 
         let keysWithSameValue = []
 
-        for (let key of Object.keys(inputToDictionary)) {
-            
-            if (value === inputToDictionary[key]) {keysWithSameValue.push(key);}
-
-        };
+        for (let key of Object.keys(inputToDictionary)) {if (value === inputToDictionary[key]) {keysWithSameValue.push(key);}};
 
         answer.push(keysWithSameValue)
 
@@ -60,6 +56,8 @@ const findKeysWithSameValue = function(inputToDictionary, valuesFromDictionaryTo
 
     return answer;
 };
+
+
 
 
 
