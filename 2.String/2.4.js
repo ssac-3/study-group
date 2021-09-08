@@ -9,39 +9,29 @@ res = [
 ]
 */
 
-const gStrs = ['eat', 'repaid', 'paired' , 'tea', 'bat'];
+const gStrs = ['eat', 'repaid', 'paired' ,'tea', 'bat'];
 
 result = (strs) =>{
     let res = [];
     strs.sort();
-    // const tempObj = {};
 
     for(let i = 0 ; i < strs.length ; i++){
-        const iLength = strs[i].length;
         res.push([strs[i]]);
 
         for(let j = 0 ; j < strs.length ; j++){
-            if(j !== 0 && strs[i].length !== strs[j].length) return;
+           
             if(i !== j){
-
-                const set = new WeakSet();
-                set.add(strs[i].split(""));
-                set.add(strs[j].split(""));
-
-                if(set.size !== 1){
-                    res[i].push(strs[j]);
+                if(strs[i].split("").sort().join("")===strs[j].split("").sort().join("")){
+                    res[res.length-1].push(strs[j]);
                     strs.splice(j,1);
-                }
-
+                    
+                };
             }
         }
         strs.splice(i,1);
+        i--;
 
     }
-
-
-
-
 
     //
     // for(let i = 0 ; i < strs.length ; i++){
