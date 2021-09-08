@@ -11,6 +11,10 @@ res = [
 
 const gStrs = ['eat', 'repaid', 'paired' ,'tea', 'bat'];
 
+const sortString = (str)=>{
+    return str.split("").sort().join("");
+}
+
 result = (strs) =>{
     let res = [];
 
@@ -20,13 +24,13 @@ result = (strs) =>{
         for(let j = 0 ; j < strs.length ; j++){
            
             if(i !== j){
-                if(strs[i].split("").sort().join("")===strs[j].split("").sort().join("")){
+                if(sortString(strs[i]) === sortString(strs[j])){
                     res[res.length-1].push(strs[j]);
                     strs.splice(j,1);
-                    
                 };
             }
         }
+
         strs.splice(i,1);
         i--;
 
