@@ -13,7 +13,6 @@ const gStrs = ['eat', 'repaid', 'paired' ,'tea', 'bat'];
 
 result = (strs) =>{
     let res = [];
-    strs.sort();
 
     for(let i = 0 ; i < strs.length ; i++){
         res.push([strs[i]]);
@@ -32,20 +31,6 @@ result = (strs) =>{
         i--;
 
     }
-
-    //
-    // for(let i = 0 ; i < strs.length ; i++){
-
-    //     if(tempObj[strs[i].length]){
-    //         tempObj[strs[i].length].push(strs[i])
-    //     }else{
-    //         tempObj[strs[i].length]= [strs[i]];
-    //     }
-    // }
-    
-
-    // console.log(tempObj);
-
     return res;
 }
 
