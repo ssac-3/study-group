@@ -9,7 +9,7 @@ res = [
 ]
 */
 
-const gStrs = ['eat', 'repaid', 'paired' ,'tea', 'bat'];
+const gStrs = ['eat', 'repaid', 'paired', 'tea', 'bat'];
 
 const sortString = (str)=>{
     return str.split("").sort().join("");
@@ -33,8 +33,8 @@ result = (strs) =>{
 
         strs.splice(i,1);
         i--;
-
     }
+
     return res;
 }
 
