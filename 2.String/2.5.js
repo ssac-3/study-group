@@ -13,8 +13,7 @@ IPv4와 다르게 4자리를 채우기 위해 0으로 시작하는 숫자가 있
 */
 
 const gIPv4 = "255.0.13.20";
-const gIPv6 = "2020:0:2311:0gc3:853e:0777:1234:1123";
-
+const gIPv6 = "2020:0:2311:0fc3:853e:0777:1234:1123";
 
 
 const result = (target)=>{
@@ -24,9 +23,9 @@ const result = (target)=>{
     const targetArrLength = splitedTargetArr.length;
 
     if(separator === "." && targetArrLength === 4){
-        console.log(".으로 구분된 if문으로 들어옴")
         
         for(targetNum of splitedTargetArr){
+
             if(
                 (targetNum > 255 || targetNum < 0) ||
                 (targetNum[0] === "0" && targetNum.length >1 )
@@ -37,21 +36,15 @@ const result = (target)=>{
         return "IPv4"; 
             
     }else if(separator === ":" && targetArrLength === 8){
-        console.log(":으로 구분된 if문으로 들어옴")
         
         for(targetNum of splitedTargetArr){
-            const lowerNum=targetNum;
 
             if(
-                !parseInt(lowerNum,16) || 
-                !(lowerNum.length>0 && lowerNum.length<5)
-            ){
-                if(lowerNum === "0" || lowerNum === "0000") continue;
-                
-                console.log(lowerNum);
+                !(targetNum === "0" || targetNum === "0000") &&
+                !parseInt(targetNum,16) || 
+                !(targetNum.length>0 && targetNum.length<5)
+            )    
                 return "Neither";
-            }
-
         }// end of for loop
 
         return "IPv6";
@@ -59,4 +52,5 @@ const result = (target)=>{
 
 }
 
-console.log(result(gIPv6));
+console.log(`IPv6에 대한 검사:${result(gIPv6)}`);
+console.log(`IPv4에 대한 검사:${result(gIPv4)}`);
