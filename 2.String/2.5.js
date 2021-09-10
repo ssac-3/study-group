@@ -13,7 +13,7 @@ IPv4와 다르게 4자리를 채우기 위해 0으로 시작하는 숫자가 있
 */
 
 const gIPv4 = "255.0.13.20";
-const gIPv6 = "2020:0:2311:0fc3:853e:0777:1234:1123";
+const gIPv6 = "2020:0:2311:0gc3:853e:0777:1234:1123";
 
 
 
@@ -26,14 +26,13 @@ const result = (target)=>{
     if(separator === "." && targetArrLength === 4){
         console.log(".으로 구분된 if문으로 들어옴")
         
-
         for(targetNum of splitedTargetArr){
             if(
                 (targetNum > 255 || targetNum < 0) ||
                 (targetNum[0] === "0" && targetNum.length >1 )
             ) 
             return "Neither";
-        }// end of for llop
+        }// end of for loop
 
         return "IPv4"; 
             
@@ -41,8 +40,7 @@ const result = (target)=>{
         console.log(":으로 구분된 if문으로 들어옴")
         
         for(targetNum of splitedTargetArr){
-            const lowerNum=targetNum.toLowerCase();
-            
+            const lowerNum=targetNum;
 
             if(
                 !parseInt(lowerNum,16) || 
@@ -54,7 +52,7 @@ const result = (target)=>{
                 return "Neither";
             }
 
-        }// end of for llop
+        }// end of for loop
 
         return "IPv6";
     }
