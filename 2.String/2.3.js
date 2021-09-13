@@ -16,10 +16,10 @@ const result = (str) =>{
     
     const filtedStr = str.split("")
         .filter(substr =>  
-                      (substr >= "a" && substr <= "z" )|| 
-                      (substr >= 0 && substr <= 9) 
+                    (substr >= "a" && substr <= "z" )|| 
+                    (substr >= 0 && substr <= 9) 
             );
-    
+
     return filtedStr.join("") === filtedStr.reverse().join("");
 }
 

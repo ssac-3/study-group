@@ -44,19 +44,40 @@ const generateQuestionList = (startNum,endNum)=>{
     return list;
 }
 
+
 const list = generateQuestionList(10,13);
-console.log(list);
 
 const reverseLink = function(linkedList){
+    const nodeArr = [];
+    let tempData;
+    let lastNode;
+    let presentNode= linkedList._head;
+    let count = 1;
 
-    
+    while(true){
 
-
-
-    if(!this.next){
-            this._head
-        return 
+        if(presentNode){
+            nodeArr.push(presentNode);
+            console.log(presentNode);
+            tempData = presentNode.next;
+            presentNode.next = null;
+            if(!tempData){
+                lastNode= presentNode;
+            }
+            presentNode = tempData;
+        }else if(presentNode){
+            break;
+        }
     }
-    
-
 }
+
+reverseLink(list);
+
+// else if(tempData.next){
+//     presentNode=lastNode;
+//     console.log(nodeArr);
+//     console.log(lastNode);
+//     presentNode.next = nodeArr[nodeArr.length - count];
+//     presentNode=lastNode;
+//     presentNode=presentNode.next; 
+// }
