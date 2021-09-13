@@ -1,83 +1,63 @@
-/*
-단일 연결 리스트가 주어지면 이 연결 리스트를 역순으로 배치해보자. 예를들어 10 -> 11 -> 12 -> 13 -> None이 주어지면,
-13 -> 12 -> 11 -> 10 -> None으로 배치하는 문제이다.
-*/
-
-function Node(data){
-    this.data = data;
-    this.next = null;
+function Node(data, next = null) {
+  this.data = data;
+  this.next = next;
 }
 
-function LinkedList(){
-    let _length = 0;
-    let _head = null;
+function LinkedList() {
+  this.head = null;
+  this.length = 0;
 }
 
-LinkedList.prototype.append = function(data){
-    const node = new Node(data);
-    let curr;
+LinkedList.prototype.pushBack = function (data) {
+  const newNode = new Node(data);
+  let cursor;
 
-    if(this._head == null){
-        this._head = node;
-    }
-    else{
-        curr = this._head;
+  if (!this.head) {
+    this.head = newNode;
+    this.length++;
+    return;
+  }
 
-        while(curr.next){
-            curr = curr.next;
-        }
+  cursor = this.head;
+  while (cursor.next) {
+    cursor = cursor.next;
+  }
 
-        curr.next = node;
-
-    }
-    this._length ++;
-
+  cursor.next = newNode;
+  this.length++;
 };
 
-const generateQuestionList = (startNum,endNum)=>{
-    const list = new LinkedList();
+LinkedList.prototype.traverse = function () {
+  let temp = this.head;
 
-    for(let i = startNum ; i <= endNum ; i++){
-        list.append(i);
-    }
+  while (temp) {
+    console.log(temp);
+    temp = temp.next;
+  }
+};
 
-    return list;
-}
+LinkedList.prototype.reverseList = function () {
+  let cursor = this.head;
+  let nextNode;
+  let previousNode = null;
 
+  while (cursor) {
+    nextNode = cursor.next;
+    cursor.next = previousNode;
+    previousNode = cursor;
+    cursor = nextNode;
+  }
 
-const list = generateQuestionList(10,13);
+  this.head = previousNode;
+};
 
-const reverseLink = function(linkedList){
-    const nodeArr = [];
-    let tempData;
-    let lastNode;
-    let presentNode= linkedList._head;
-    let count = 1;
+const linkedList = new LinkedList();
 
-    while(true){
+linkedList.pushBack(11);
+linkedList.pushBack(12);
+linkedList.pushBack(13);
+linkedList.pushBack(14);
+linkedList.traverse();
 
-        if(presentNode){
-            nodeArr.push(presentNode);
-            console.log(presentNode);
-            tempData = presentNode.next;
-            presentNode.next = null;
-            if(!tempData){
-                lastNode= presentNode;
-            }
-            presentNode = tempData;
-        }else if(presentNode){
-            break;
-        }
-    }
-}
-
-reverseLink(list);
-
-// else if(tempData.next){
-//     presentNode=lastNode;
-//     console.log(nodeArr);
-//     console.log(lastNode);
-//     presentNode.next = nodeArr[nodeArr.length - count];
-//     presentNode=lastNode;
-//     presentNode=presentNode.next; 
-// }
+linkedList.reverseList();
+linkedList.traverse();
