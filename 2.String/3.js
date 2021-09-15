@@ -1,6 +1,7 @@
 'use strict';
 
-const IPV4 = '172.00.13.251';
+const IPV4 = '172.0.13.251';
+const IPV6 = '2020:0bc3:0000:0000:853e:0777:1234';
 
 const checkIPv4 = (ipv4) => {
   const ARRAY = ipv4.split('.');
