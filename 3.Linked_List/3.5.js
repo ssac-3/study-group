@@ -15,11 +15,12 @@ function LinkedList(){
 }
 
 LinkedList.prototype.insertNode = function(data){
-    const newNode = new Node(data);
+    let newNode = new Node(data);
 
     if(!this.head) //최초 등록한 노드가 없으면
         this.head = newNode; // 새로운 노드를 head에 삽입.
     else{
+        newNode= this.head;
         let presentNode = this.head; //최초노드가 존재한다면
         
         while(presentNode.next){ // 현재노드의 다음값이 없을때까지 노드속으로 들어간다.
@@ -28,6 +29,7 @@ LinkedList.prototype.insertNode = function(data){
         presentNode.next = newNode; // 다음값이 없는 마지막 노드에 새 노드를 넣는다
         
     }
+    
 
     this.length++; // 길이증가
 }
