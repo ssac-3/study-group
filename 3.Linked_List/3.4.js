@@ -58,13 +58,15 @@ const reverseLink = function(linkedList){
 
         if(presentNode){
             nodeArr.push(presentNode);
-            console.log(presentNode);
+            
             tempData = presentNode.next;
             presentNode.next = null;
+
             if(!tempData){
                 lastNode= presentNode;
             }
             presentNode = tempData;
+            
         }else if(presentNode){
             break;
         }

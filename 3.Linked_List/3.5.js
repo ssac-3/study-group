@@ -30,7 +30,6 @@ LinkedList.prototype.insertNode = function(data){
         
     }
     
-
     this.length++; // 길이증가
 }
 

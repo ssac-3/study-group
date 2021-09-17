@@ -9,7 +9,7 @@ const readline = require('readline');
  1   3   3   1
 
 문제: 입력으로 몇 줄을 만들것인지 받아서 파스칼의 삼각형을 이차원 배열의 형태로 구성하라.
-ex. target=3 output = [[1],[1,1],[1,3,1]]
+ex. target=3 output = [[1],[1,1],[1,2,1]]
 */
 
 const term = readline.createInterface({

@@ -19,9 +19,6 @@ const result = (arr1,arr2)=>{
             if(arr2[j] < arr1[i]){
                 
                 [arr1[i],arr2[j]] = [arr2[j], arr1[i]];
-                // temp = arr1[i];
-                // arr1[i] = arr2[j];
-                // arr2[j] = temp;
             }
         }
     }
