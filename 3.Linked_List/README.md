@@ -97,8 +97,6 @@ def push(self, data:Any):
   self.head = new_node
   new_node.next = temp
 
-# TODO: Remove 부분 다시 공부!!
-
 # 노드 삭제
 def remove_node(self, node:Node):
   if node == None: return
@@ -147,3 +145,6 @@ linked_list.traverse()
 ---
 
 ## 6. 두 수 더하기<a id="6"></a>
+- 두 연결 리스트의 같은 순서 값을 더한 연결리스트를 반환하라.
+- ex) input: 1 -> 2 -> 3 , 4 -> 5-> 6
+      output: 5 -> 7 -> 9
