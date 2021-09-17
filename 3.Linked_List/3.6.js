@@ -9,7 +9,6 @@
 예를들어 1->2->3 과 4->5->6이 주어졌다면 5->7->9를 반환하면 된다.
 
 */
-
 function Node(data){
     this.data = data;
     this.next = null;
@@ -27,7 +26,6 @@ LinkedList.prototype.insertNode= function(data){
     if(!this.head){
         this.head = newNode;
     }else{
-
         while(presentNode.next)
             presentNode = presentNode.next;
         
@@ -36,7 +34,7 @@ LinkedList.prototype.insertNode= function(data){
     this.length++;
 }
 
-LinkedList.prototype.generateList = function (startNum,endNum){
+LinkedList.prototype.generateList = function (startNum, endNum){
 
     if(this.head){
         return;
@@ -55,12 +53,21 @@ const sumLinkedList = (list1,list2)=>{
     let resultList;
 
 
-    while(presentList1 && presentList2){
-        list1Str+= ""+presentList1.data;
-        list2Str+= ""+presentList2.data;
+    while(presentList1 || presentList2){
 
-        presentList1= presentList1.next;
-        presentList2= presentList2.next;
+        if(presentList1){
+            list1Str+= ""+presentList1.data;
+            presentList1= presentList1.next;
+        }else{
+            list1Str+= ""+"0"
+        }
+
+        if(presentList2){
+            list2Str+= ""+presentList2.data;
+            presentList2= presentList2.next;
+        }else{
+            list2Str+= ""+"0"
+        }
     }
 
     resultList = ""+(Number(list1Str)+Number(list2Str));
@@ -75,7 +82,7 @@ const sumLinkedList = (list1,list2)=>{
 const listA = new LinkedList();
 const listB = new LinkedList();
 
-listA.generateList(1,3);
+listA.generateList(7,9);
 listB.generateList(4,6);
 
 console.log(sumLinkedList(listA,listB));
