@@ -63,7 +63,8 @@ stack; //[1, 2]
 ---
 
 ## 4. 재귀 연습문제<a id="4"></a>
-
+- 순열(permutation) : 모든 문자열 치환
+- ex) input: 'abc', output: ['abc','acb','bac','bca','cab','cba']
 ---
 
 ## 5. 재귀 연습<a id="5"></a>
