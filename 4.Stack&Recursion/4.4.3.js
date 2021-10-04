@@ -1,15 +1,15 @@
 'use strict';
 
-const MONEY = 15;
-const COIN = [1, 2, 4];
+const MONEY = 11;
+const COIN = [1, 2, 10, 5];
 const ANSWER = [];
 
 const checkLastMoney = (money, coin) => {
   let temp = money;
   let count = 0;
-  coin.sort(function (a, b) {
-    return b - a;
-  });
+
+  coin.sort().reverse();
+  console.log(coin);
 
   while (temp > 0) {
     while (temp - coin[count] >= 0) {
