@@ -30,6 +30,7 @@
 - 시간복잡도 O(2^n)
 ```py
 from typing import List
+
 def fib(n:int, memo:List[int]) -> int:
   if memo[n] == -1:
     memo[n] = fib(n-1, memo) + fib(n-2, memo)
