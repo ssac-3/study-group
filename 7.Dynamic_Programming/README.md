@@ -34,7 +34,7 @@ from typing import List
 def fib(n:int, memo:List[int]) -> int:
   if memo[n] == -1:
     memo[n] = fib(n-1, memo) + fib(n-2, memo)
-   return memo[n]
+  return memo[n]
    
 n = 4
 memo = [-1] * (n+1)
