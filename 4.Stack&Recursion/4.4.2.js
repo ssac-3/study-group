@@ -24,6 +24,7 @@ function permutation(arr, selectNum) {
     const combineFixer = permuationArr.map((v) => [fixer, ...v]); //고정값이 있는 배열에 경우의수 추가
     result.push(...combineFixer); // 경우의수 push
   });
+
   return result;
 }
 
