@@ -4,8 +4,8 @@
 */
 
 const merge = (left, right) => {
-  const leftLength = left.length;
-  const rightLength = right.length;
+  const leftLength = left.length;  //3
+  const rightLength = right.length; //2
   console.log(`들어온값 left:${left}, right:${right}`);
   let result = [];
   let leftIdx = 0;
